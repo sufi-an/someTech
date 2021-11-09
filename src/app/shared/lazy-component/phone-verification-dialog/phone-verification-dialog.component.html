@@ -1,0 +1,55 @@
+
+
+<div class="top">
+    <p>We have sent a 6 digit OTP to your mobile number. Enter the OTP we will automatically verify this. </p>
+  </div>
+  
+  <form [formGroup]="verificationForm">
+    <div class="code-area">
+      <mat-form-field class="verify-input-field" appearance="outline">
+        <input matInput type="text" id="code1"
+               (keyup)="nextStep($event,1)"
+               (focus)="focused(1)" formControlName="code1"
+               maxlength="1"
+               (paste)="paste($event)" autofocus>
+      </mat-form-field>
+  
+      <mat-form-field class="verify-input-field" appearance="outline">
+        <input matInput type="text" id="code2" (keyup)="nextStep($event,2)"
+               (focus)="focused(2)" formControlName="code2" maxlength="1">
+      </mat-form-field>
+  
+      <mat-form-field class="verify-input-field" appearance="outline">
+        <input matInput type="text" id="code3" (keyup)="nextStep($event,3)"
+               (focus)="focused(3)" formControlName="code3" maxlength="1">
+      </mat-form-field>
+  
+      <mat-form-field class="verify-input-field" appearance="outline">
+        <input matInput type="text" id="code4" (keyup)="nextStep($event,4)"
+               (focus)="focused(4)" formControlName="code4" maxlength="1">
+      </mat-form-field>
+  
+      <mat-form-field class="verify-input-field" appearance="outline">
+        <input matInput type="text" id="code5" (keyup)="nextStep($event,5)"
+               (focus)="focused(5)" formControlName="code5" maxlength="1">
+      </mat-form-field>
+  
+      <mat-form-field class="verify-input-field" appearance="outline">
+        <input matInput type="text" id="code6" (keyup)="nextStep($event,6)"
+               (focus)="focused(6)" formControlName="code6" maxlength="1">
+      </mat-form-field>
+    </div>
+  
+    <!--****** verification-timing-area *******-->
+    <div class="verification-timing-area" [fxHide]="countDown === 0">
+      <h3><span><i class="fa fa-clock"></i></span>{{countDown}} seconds</h3>
+    </div>
+  
+  
+    <div class="action">
+      <button type="button" fxHide [fxShow]="countDown <= 0"  mat-raised-button color="accent" (click)="resendLoginCode()">Resent</button>
+    </div>
+  
+  </form>
+  
+  

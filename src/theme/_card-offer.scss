@@ -1,0 +1,161 @@
+@import "variables";
+
+
+.dealOnPlay-details {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  box-sizing: border-box;
+  padding: 25px 25px;
+  border-radius: 10px;
+  position: relative;
+  z-index: 10;
+  min-height: 220px;
+  max-height: 250px;
+  cursor: pointer;
+}
+
+.dealOnPlay-details::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, .08);
+  z-index: -10;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s linear;
+  transform: scaleX(0);
+  transform-origin: center center;
+}
+
+.dealOnPlay-details::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, .08);
+  z-index: -10;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s linear;
+  transform: scaleY(0);
+  transform-origin: center center;
+}
+
+
+.dealOnPlay-img {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dealOnPlay-img img {
+  max-width: 100%;
+}
+
+.dealOnPlay-text-details {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.dealOnPlay-title h2 {
+  font-family: $font-en-primary;
+  font-weight: 600;
+  font-style: normal;
+  display: block;
+  color: #000;
+  font-size: 18px;
+  padding: 0px 0;
+  margin-bottom: 10px;
+}
+
+
+.dealOnPlay-title h4 {
+  font-weight: 500;
+  font-style: normal;
+  font-family: $font-en-primary;
+  color: #000;
+  font-size: 16px;
+  display: block;
+  padding: 6px 0;
+}
+
+.dealOnPlay-exchange {
+  padding-top: 5%;
+}
+
+
+.dealOnPlay-exchange h4 {
+  font-weight: 400;
+  font-style: normal;
+  font-family: $font-en-primary;
+  display: block;
+  color: #000;
+  font-size: 13px;
+}
+
+@media(min-width:960px) and (max-width:1440px){
+  .dealOnPlay-title h2{
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+  .dealOnPlay-title h4{
+    font-size: 17px;
+  }
+  .dealOnPlay-exchange h4{
+    font-size: 15px;
+  }
+}
+
+.dealOnPlay-title a {
+  font-size: 13px;
+  font-family: $font-en-primary;
+  font-weight: 600;
+  font-style: normal;
+  display: inline-block;
+  padding: 6px 10px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+
+/**hover-effect*/
+.dealOnPlay-details:hover::after {
+  visibility: visible;
+  opacity: 1;
+  transform: scaleY(1);
+}
+
+.dealOnPlay-details:hover::before {
+  visibility: visible;
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+/**deal-on-play-area-end***/
+
+@media(max-width: 460px) {
+  .dealOnPlay-title h2 {
+    font-size: 17px;
+  }
+  .dealOnPlay-title h4 {
+    font-size: 14px;
+  }
+  .dealOnPlay-title a {
+    padding: 5px 10px;
+    font-size: 14px;
+  }
+  .dealOnPlay-exchange h4 {
+    font-size: 14px;
+  }
+}

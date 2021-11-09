@@ -1,0 +1,7 @@
+
+    <div *ngFor="let post of collection | paginate: { itemsPerPage: 15, currentPage: p }" style="display: inline-block;">
+    <!-- <div> {{post.title}}</div> -->
+    <h3>{{post.id}}</h3>
+    <img style="width: 200px;" src={{post.url}} alt="unknown image">
+    </div>
+<pagination-controls (pageChange)="p = $event"></pagination-controls>

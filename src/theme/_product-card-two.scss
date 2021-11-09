@@ -1,0 +1,206 @@
+@import "variables";
+@import "variables";
+
+.only-for-you-product {
+  display: block;
+  width: 100%;
+  height: auto;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  padding: 10px 6px;
+  transition: all 0.3s linear;
+}
+
+.only-for-you-product-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.only-for-you-product-img img {
+  max-width: 100%;
+  height: 200px;
+}
+
+.only-for-you-product-content {
+  text-align: center;
+}
+
+.only-for-you-product-content a {
+  color: #666;
+  font-style: normal;
+  font-weight: 400;
+  font-family: $font-en-primary;
+  display: block;
+  font-size: 16px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 10px;
+}
+
+.only-for-you-product a:hover {
+  color: red;
+}
+
+.only-for-you-product-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 12px 0;
+}
+
+.only-for-you-product-content ul li {
+  display: inline-block;
+  margin: 0;
+}
+
+.only-for-you-product-content ul li span {
+  font-size: 10px;
+  color: #999;
+  font-weight: 600;
+  display: block;
+}
+
+.only-for-you-product-content ul li:nth-child(1) i {
+  color: #db7240;
+}
+
+.only-for-you-product-content ul li:nth-child(2) i {
+  color: #db7240;
+}
+
+.only-for-you-product-content ul li:nth-child(3) i {
+  color: #db7240;
+}
+
+.rate {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-bottom: 13px;
+}
+
+.rate h2 {
+  color: red;
+  font-weight: 600;
+  font-style: normal;
+  font-family: $font-en-primary;
+  font-size: 20px;
+  display: block;
+}
+
+.rate span {
+  font-size: 14px;
+  font-weight: 600;
+  color: red;
+}
+
+.rate h2 del {
+  color: #777;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.rate del span {
+  color: #777;
+}
+
+.btn {
+  display: block;
+  text-align: center;
+  margin-bottom: 7px;
+}
+
+.btn a {
+  display: inline-block;
+  font-weight: 700;
+}
+
+.btn a > span {
+  display: inline-block;
+  padding: 5px 5px;
+  border: 1px solid red;
+  color: red;
+  font-family: $font-en-primary;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 10px;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.btn a small {
+  display: inline-block;
+  padding: 5px 8px;
+  box-sizing: border-box;
+  border-top: 1px solid #34b200;
+  border-right: 1px solid #34b200;
+  border-bottom: 1px solid #34b200;
+  border-radius: 0 10px 10px 0;
+  color: #34b200;
+  font-size: 14px;
+  font-family: $font-en-primary;
+  position: relative;
+  left: -10px;
+  top: 0;
+
+}
+
+.btn a small span {
+  font-size: 11px;
+  display: inline-block;
+  color: #34b200;
+}
+
+.only-for-btn {
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.only-for-btn a {
+  color: #34b200;
+  background-color: #fff;
+  text-transform: uppercase;
+  font-family: $font-en-primary;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 19px;
+  max-width: 250px;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  border: 1px solid #34b200;
+  padding: 10px 5px;
+  box-sizing: border-box;
+  transition: all 0.3s linear;
+}
+
+.only-for-btn a:hover {
+  background-color: #34b200;
+  color: #fff;
+}
+
+.only-for-you-product:hover {
+  border-color: #8db654;
+  box-shadow: 0 2px 5px 0 #34b200;
+}
+
+.btn a:hover > span {
+  background-color: red;
+  color: #fff;
+}
+
+.btn a:hover small {
+  color: #fff;
+  background-color: #34b200;
+}
+
+.btn a:hover small span {
+  color: #fff;
+}
+

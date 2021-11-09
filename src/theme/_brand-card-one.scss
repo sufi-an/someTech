@@ -1,0 +1,50 @@
+@import "variables";
+
+.section3-product {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.product1 {
+  border: 1px solid rgba(0, 0, 0, .3);
+  padding: 15px 10px;
+  box-sizing: border-box;
+  border-radius: 7px;
+  height: 100%;
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, .4);
+  position: relative;
+  text-align: center;
+  cursor: pointer;
+
+  &:hover {
+    border-color: #34b200;
+
+    a {
+      color: red;
+    }
+  }
+}
+
+.product1 a {
+  display: inline-block;
+  color: #3a3a3a;
+  font-style: normal;
+  font-family: $font-en-primary;
+  font-weight: 600;
+  font-size: 15px;
+  text-align: center;
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+}
+
+.product1 img {
+  height: 100px;
+  margin-bottom: 30px;
+  width: 100%;
+  object-fit: contain;
+}
+
+

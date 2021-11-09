@@ -1,0 +1,60 @@
+<<!--- Login-area -->
+<section class="login-area">
+    <div class="container">
+      <div class="login-details-start">
+        <!--- login-title -->
+        <div class="login-title clearfix">
+          <div class="login-title-left">
+            <h2>Welcome to E-medilife! Please login</h2>
+          </div>
+          <div class="login-title-right">
+            <h3>New member? <a routerLink="/registration">Register now</a></h3>
+          </div>
+        </div>
+        <div class="login-details">
+          <div class="login-form">
+            <form [formGroup]="formData" (ngSubmit)="onSubmitForm()">
+              <div class="login-field">
+                <mat-form-field appearance="outline" class="w-100">
+                  <mat-label>Phone Number</mat-label>
+                  <input type="tel" formControlName="username" matInput
+                         digitOnly
+                         [minLength]="11"
+                         [maxLength]="11"
+                         placeholder="01XXXXXXXXX">
+                  <mat-icon matSuffix>call</mat-icon>
+                  <mat-error>Please enter your phone number</mat-error>
+                </mat-form-field>
+              </div>
+  
+              <div class="login-field">
+                <mat-form-field appearance="outline" class="w-100">
+                  <mat-label>Password</mat-label>
+                  <input required type="password" formControlName="password" matInput placeholder="Please enter your password">
+                  <mat-icon matSuffix style="cursor: pointer" (click)="isHiddenPass = !isHiddenPass">
+                    {{isHiddenPass ? 'visibility' : 'visibility_off'}}
+                  </mat-icon>
+                  <mat-error>Please enter your valid password</mat-error>
+                </mat-form-field>
+              </div>
+  
+  
+              <div class="forget">
+                <a routerLink="/password-recovery">Forget password?</a>
+              </div>
+              <div class="login-btn">
+                <button type="submit">login</button>
+              </div>
+            </form>
+          </div>
+  
+         
+  
+        </div>
+  
+  
+      </div>
+    </div>
+  </section>
+  
+  

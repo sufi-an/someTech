@@ -1,0 +1,99 @@
+@import "variables";
+
+/** section-4 ***/
+.section-4{
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-bottom: 10vh;
+  box-sizing: border-box;
+  margin-top: 20px;
+}
+.section4-menu{
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding-bottom: 3vh;
+}
+.section4-menu ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: right;
+}
+.section4-menu ul li{
+  display: inline-block;
+  margin-left: 10px;
+}
+.section4-menu ul li:first-child{
+  margin: 0;
+}
+.section4-menu ul li a{
+  color: #333;
+  font-family: $font-en-primary;
+  display: block;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  transition: all 0.3s linear;
+  cursor: pointer;
+  padding: 8px 15px;
+  box-sizing: border-box;
+  border-radius: 4px;
+
+  &.active {
+    color: #fff;
+    background-color: #be0101;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 6px 15px;
+    box-sizing: border-box;
+  }
+  &.active:hover{
+    color: #fff!important;
+  }
+}
+.section4-menu ul li a:hover{
+  color: #be0101;
+}
+
+.section4-main{
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  border-top: 1px solid #e0e0e0;
+  padding: 0;
+  margin-bottom: 40px;
+}
+.section4-cards{
+  padding-top: 30px;
+  box-sizing: border-box;
+  width: 100%;
+  margin: auto;
+  position: relative;
+}
+
+/****  card details check card.css file ***/
+@media(max-width:550px){
+ 
+  .section4-cards .card .card-img{
+    border:none;
+  }
+  .section4-menu{
+    padding-bottom: 3vh;
+  }
+  .section4-menu ul li{
+    margin: 0px;
+  }
+  .section4-menu ul li a{
+    padding: 6px 10px;
+    font-size: 15px;
+  }
+}
+
+@media(max-width:600px){
+  .section4-cards{
+    margin-bottom: 30px;
+  }
+}
+

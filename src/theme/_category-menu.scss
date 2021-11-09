@@ -1,0 +1,45 @@
+@import "variables";
+
+/**
+CATEGORY MENU
+ */
+
+.category-menu {
+  position: relative;
+  background: #F8F8F8;
+  ul {
+    list-style: none;
+  }
+}
+
+.cat-dropdown-item {
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 20px;
+  border-bottom: 1px solid #E7E7E7;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    background: #E9F1ED;
+  }
+
+  a {
+    text-decoration: none;
+    color: #666;
+    font-size: 16px;
+    font-weight: 400;
+    cursor: pointer;
+    font-family: $font-en-primary;
+  }
+
+  mat-icon {
+    margin-left: auto;
+    color: #666;
+  }
+}

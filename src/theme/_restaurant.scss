@@ -1,0 +1,109 @@
+@import "variables";
+
+
+
+/*section-6 or Resturant */
+.resturant{
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-bottom: 30px;
+  margin-top: 10px;
+}
+.resturant-title{
+  display: block;
+  margin-bottom: 20px;
+}
+.resturant-left{
+  float: left;
+  width: 60%;
+  display: block;
+  text-align: left;
+}
+.resturant-right{
+  float: right;
+  width: 40%;
+  display: block;
+  text-align: right;
+}
+.resturant-left h1{
+  font-weight: 600;
+  font-style: normal;
+  font-size: 25px;
+  display: block;
+  padding-bottom: 10px;
+  position: relative;
+  z-index: 30;
+  color: black;
+  font-family: 'Rubik',sans-serif;
+}
+.resturant-left h1::after{
+  content: "";
+  display: block;
+  width: 150px;
+  height: 3px;
+  background-color: #00e87e;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+}
+.resturant-right a{
+  color: red;
+  font-weight: 300;
+  font-family: 'Rubik',sans-serif;
+  display: inline-block;
+  max-width: 130px;
+  width: 100%;
+  padding: 8px 0px;
+  border:1px solid red;
+  text-align: center;
+  border-radius: 5px;
+  margin-top: 5px;
+  transition: all 0.3s linear;
+}
+.resturant-right a span{
+  color: red;
+  font-size: 15px;
+  font-weight: 400;
+  transition: all 0.3s linear;
+  position: relative;
+  top: 0px;
+}
+.resturant-right a:hover{
+  background-color: red;
+  color: #fff;
+}
+.resturant-right a:hover span{
+  color: #fff;
+}
+/*resturant-food-details*/
+.resturant-food{
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px 10px;
+}
+
+
+/*resutrant-details*/
+@media(max-width:1150px){
+  .resturant-food{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media(max-width:756px){
+  .resturant-food{
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+@media(max-width:400px){
+  .food-order ul li:nth-child(3){
+    display: none;
+
+  }
+  .food-content h2{
+    font-size: 18px;
+  }
+}

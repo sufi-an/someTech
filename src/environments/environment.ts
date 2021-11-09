@@ -3,7 +3,15 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apiBaseLink: 'http://localhost:6900',
+  ftpBaseLink: 'http://localhost:6900',
+  appBaseUrl: '/',
+  userBaseUrl: '/account',
+  userLoginUrl: '/login',
+  storageSecret:'SOFT_2021_IT_1998',
+
+  VERSION: 1
 };
 
 /*

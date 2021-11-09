@@ -1,0 +1,143 @@
+@import "variables";
+
+
+.section-view {
+  display: block;
+  width: 100%;
+  height: auto;
+  padding: 20px 0;
+  margin-top: 20px;
+}
+
+.section-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+
+  .title {
+    text-align: left;
+
+    h1 {
+      font-style: normal;
+      font-family: $font-en-primary;
+      color: black;
+      font-weight: 600;
+      font-size: 25px;
+      display: block;
+      position: relative;
+      z-index: 3;
+      padding-bottom: 15px;
+
+      &::after {
+        content: "";
+        display: block;
+        width: 220px;
+        height: 3px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        background-color: #00e87e;
+      }
+    }
+  }
+
+  .counter-time {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    height: 100%;
+    background-color: #1d488e;
+    padding: 16px 12px;
+    box-sizing: border-box;
+    max-width: 280px;
+    width: 100%;
+    margin: auto;
+    border-radius: 5px;
+
+    p {
+      color: #C0D8FF;
+      font-size: 15px;
+      font-family: $font-en-primary;
+      font-weight: 500;
+    }
+  }
+
+  .see-more {
+    text-align: right;
+    margin-top: 2px;
+  }
+
+  .see-more a {
+    display: inline-block;
+    border: 1px solid red;
+    font-style: normal;
+    color: red;
+    padding: 8px 16px;
+    max-width: 130px;
+    width: 100%;
+    text-align: center;
+    font-weight: 400;
+    font-size: 17px;
+    font-family: $font-en-primary;
+    border-radius: 5px;
+    transition: all 0.3s linear;
+    box-sizing: border-box;
+
+    i {
+      color: red;
+      transition: all 0.3s linear;
+    }
+
+    &:hover {
+      color: #fff;
+      background-color: red;
+
+      i {
+        color: #FFFFFF;
+      }
+    }
+  }
+
+
+  .see-more span {
+    font-size: 14px;
+    position: relative;
+    top: 0;
+    color: red;
+    transition: all 0.3s linear;
+    margin-left: 4px;
+  }
+
+  .see-more a:hover span {
+    color: #fff;
+  }
+
+}
+
+
+::ng-deep.count-down span {
+  color: #FFFFFF;
+  font-size: 18px;
+  font-family: $font-en-primary;
+  font-weight: 500;
+}
+
+
+/*********************
+section-2-responsive-area
+
+********************/
+
+
+@media(max-width: 756px) {
+  .counter-time {
+    display: none;
+  }
+  .section-title {
+    gap: 8px;
+  }
+}
+

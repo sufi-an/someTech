@@ -1,0 +1,63 @@
+
+.top {
+    padding: 5px 0;
+    p {
+      //font-family: $font-en-primary;
+    }
+  }
+  
+  form {
+    width: 100%;
+  }
+  .code-area {
+    width: 360px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .verify-input-field {
+      flex: 1;
+      width: 100%;
+      max-width: 48px;
+      input {
+        text-align: center !important;
+      }
+    }
+  }
+  
+  .action {
+    text-align: center;
+    margin-top: 5px;
+  }
+  
+  
+  .verification-timing-area{
+    display: block;
+    text-align: center;
+  }
+  .verification-timing-area h3{
+    color: #ff4b77;
+    /* font-family: $font-en-primary; */
+    font-style: normal;
+    display: block;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 30px;
+    text-align: center;
+  }
+  .verification-timing-area h3 span{
+    margin-right:8px;
+    font-size: 23px;
+    display: inline-block;
+    margin-top: 3px;
+  }
+  
+  @media only screen and (max-width: 599px){
+    .code-area {
+      width: 100%;
+      .verify-input-field {
+        max-width: 45px;
+      }
+    }
+  }
+  

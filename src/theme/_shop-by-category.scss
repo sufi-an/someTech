@@ -1,0 +1,108 @@
+@import "variables";
+
+/** shop By Department **/
+.section-1 {
+  box-sizing: border-box;
+  margin-top: 20px;
+
+  .container {
+    position: relative;
+  }
+}
+
+.bg-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #F7F7F7;
+  width: 100%;
+  height: 130px;
+  z-index: -1;
+}
+
+.section1-top {
+  margin-bottom: 0;
+  padding: 20px 16px 24px 16px;
+}
+
+.section1-top ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.section1-top ul li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.section1-top ul li:last-child {
+  margin-right: 0;
+}
+
+.section1-top ul li h2 {
+  font-weight: 600;
+  font-family: $font-en-primary;
+  color: #000;
+  display: block;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 25px;
+  margin-bottom: 5px;
+}
+
+.section1-top ul li h3 {
+  color: #a5a5a5;
+  font-weight: 400;
+  font-style: normal;
+  display: block;
+  font-size: 14px;
+  font-family: $font-en-primary;
+  line-height: 24px;
+}
+@media(max-width:500px){
+  .section1-top{
+    text-align: center;
+  }
+  .section1-top ul li{
+    display: block;
+    margin: 0px;
+    margin-bottom: 5px;
+  }
+}
+
+.section1-main {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: auto;
+  grid-gap: 15px 15px;
+}
+
+
+/** shop By Department **/
+@media(max-width: 430px) {
+  .section1-top {
+    text-align: center;
+  }
+  .section1-top h2 {
+    font-size: 19px;
+  }
+}
+
+@media(max-width: 1080px) {
+  .section1-main {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media(max-width: 625px) {
+  .section1-main {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media(max-width: 360px) {
+  .section1-main {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

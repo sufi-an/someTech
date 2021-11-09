@@ -1,0 +1,276 @@
+@import "variables";
+
+
+/*electronics-section*/
+.Electronics{
+  display: block;
+  width: 100%;
+  height: auto;
+  background-color: #fff;
+  margin-bottom: 30px;
+  margin-top: 10px;
+  box-sizing: border-box;
+}
+.Electronics-title{
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.Electronics-left{
+  float:left;
+  width: 60%;
+  text-align: left;
+  display: block;
+}
+.Electronics-right{
+  float: right;
+  width: 40%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.Electronics-left h1{
+  color: #111;
+  font-weight: 600;
+  font-style: normal;
+  display: block;
+  font-family:sans-serif;
+  font-size: 25px;
+  padding-bottom: 10px;
+  position:relative;
+  z-index: 1;
+  text-transform: capitalize;
+  font-family: 'Rubik',sans-serif;
+  box-sizing: border-box;
+}
+.Electronics-left h1::after{
+  content: "";
+  display: block;
+  width: 160px;
+  height: 3px;
+  background-color: #00e87e;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  z-index: 2;
+  border-radius: 5px;
+}
+.Electronics-right a{
+  color: red;
+  background-color: #fff;
+  border:1px solid red;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  display: inline-block;
+  max-width: 130px;
+  width: 100%;
+  padding: 8px 0px;
+  border-radius: 6px;
+  transition:all 0.3s linear;
+  margin-top: 5px;
+  box-sizing: border-box;
+  text-align: center;
+}
+.Electronics-right a span{
+  font-size: 13px;
+  margin-left: 3px;
+  position: relative;
+  top: 0px;
+  color: red;
+  transition: all 0.3s linear;
+}
+.Electronics-right a:hover{
+  color: #fff;
+  background-color: red;
+}
+.Electronics-right a:hover span{
+  color: #fff;
+}
+.Electronics-product-details{
+  display: grid;
+  grid-template-columns: repeat(6, 16%);
+  grid-gap: 10px 10px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+}
+.Electronics-product{
+  display: block;
+  width: 100%;
+  height: auto;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  padding: 10px 6px;
+  transition: all 0.3s linear;
+}
+.Electronics-product-img{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+.Electronics-product-img img{
+  max-width: 100%;
+  height: 200px;
+}
+.Electronics-product-content{
+  text-align: center;
+  overflow: hidden;
+}
+.Electronics-product-content a{
+  color: #666;
+  font-style: normal;
+  font-weight: 400;
+  font-family: 'Rubik',sans-serif;
+  display: block;
+  font-size: 16px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 10px;
+}
+.Electronics-product a:hover{
+  color: red;
+}
+.Electronics-product-content ul{
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+  margin-bottom: 12px;
+}
+.Electronics-product-content ul li{
+  display: inline-block;
+  margin: 0px;
+}
+.Electronics-product-content ul li span{
+  font-size: 10px;
+  color: #999;
+  font-weight: 600;
+  display: block;
+}
+.Electronics-product-content ul li:nth-child(1) span{
+  color: #db7240;
+}
+.Electronics-product-content ul li:nth-child(2) span{
+  color: #db7240;
+}
+.Electronics-product-content ul li:nth-child(3) span{
+  color: #db7240;
+}
+.rate{
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-bottom: 13px;
+}
+.rate h2{
+  color: red;
+  font-weight: 600;
+  font-style: normal;
+  font-family: 'Rubik',sans-serif;
+  font-style: normal;
+  font-size: 20px;
+  display: block;
+}
+.rate span{
+  font-size: 14px;
+  font-weight: 600;
+  color: red;
+}
+.rate h2 del{
+  color: #777;
+  font-size: 16px;
+  font-weight: 500;
+}
+.rate h2 del span{
+  color: #777;
+}
+.btn{
+  display: block;
+  text-align: center;
+  margin-bottom: 7px;
+}
+.btn a{
+  display: inline-block;
+  font-weight: 700;
+}
+.btn a > span{
+  display: inline-block;
+  padding: 5px 5px;
+  border:1px solid red;
+  color: red;
+  font-family: 'Rubik',sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 10px;
+  box-sizing: border-box;
+  margin: 0px;
+  transition: all 0.3s linear;
+}
+
+.btn a small{
+  display: inline-block;
+  padding: 5px 8px;
+  box-sizing: border-box;
+  border-top: 1px solid #34b200;
+  border-right: 1px solid #34b200;
+  border-bottom: 1px solid #34b200;
+  border-radius: 0px 10px 10px 0px;
+  color: #34b200;
+  font-size: 14px;
+  font-family: 'Rubik',sans-serif;
+  position: relative;
+  left: -10px;
+  top: 0px;
+  transition: all 0.3s linear;
+}
+
+.btn a small span{
+  font-size: 11px;
+  display: inline-block;
+  color: #34b200;
+  transition: all 0.3s linear;
+}
+
+.Electronics-product:hover{
+  border-color:#34b200;
+  box-shadow: 0 2px 5px 0 #34b200;
+}
+
+.btn a:hover > span{
+  background-color: red;
+  color: #fff;
+}
+.btn a:hover small{
+  color: #fff;
+  background-color: #34b200;
+}
+.btn a:hover small span{
+  color: #fff;
+}
+
+
+/* Electronics-product-responive */
+@media(max-width:1200px){
+  .Electronics-product-details{
+    grid-template-columns: repeat(4, 25%);
+  }
+}
+@media(max-width:940px){
+  .Electronics-product-details{
+    grid-template-columns: repeat(3, 33.33%);
+  }
+}
+@media(max-width:726px){
+  .Electronics-product-details{
+    grid-template-columns: repeat(2, 50%);
+  }
+}
+@media(max-width:450px){
+  .Electronics-product-details{
+    grid-template-columns: repeat(1, 100%);
+  }
+}

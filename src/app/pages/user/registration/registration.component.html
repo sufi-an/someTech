@@ -1,0 +1,87 @@
+
+<div class="basic-form">
+  <form [formGroup]="dataForm" (ngSubmit)="onSubmitRegister()" autocomplete="off">
+  <div class="name-container">
+  <div class="container" style="margin-right: 20px;">
+    <mat-form-field appearance="outline" class="w-100">
+      <mat-label>First Name</mat-label>
+      <input matInput placeholder="John" formControlName="firstName" required>
+     
+    </mat-form-field>
+  </div>
+  <div class="container">
+    <mat-form-field appearance="outline" class="w-100">
+      <mat-label>Last Name</mat-label>
+      <input matInput placeholder="Doe" formControlName="lastName" required>
+     
+    </mat-form-field>
+  </div>
+</div>
+<div class="name-container">
+<div class="container" style="margin-right: 20px;">
+    <mat-form-field appearance="outline" class="w-100">
+      <mat-label>Phone Number</mat-label>
+      <input matInput placeholder="017xxxxx" formControlName="phoneNo" required>
+     
+    </mat-form-field>
+  </div>
+  <div class="container">
+    <mat-form-field appearance="outline" class="w-100">
+      <mat-label>Email</mat-label>
+      <input matInput placeholder="pat@example.com" formControlName="email" required>
+     
+    </mat-form-field>
+  </div>
+</div>
+<div class="name-container">
+  <div class="container" style="margin-right: 20px;">
+    <mat-form-field appearance="outline" class="w-100">
+      <mat-label>Enter your password</mat-label>
+      <input matInput formControlName="password" [type]="isHiddenPass ? 'password' : 'text'">
+      <button mat-icon-button matSuffix (click)="isHiddenPass = !isHiddenPass" [attr.aria-label]="'hide password'" [attr.aria-pressed]="isHiddenPass">
+        <mat-icon>{{isHiddenPass ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+    </mat-form-field>
+    </div>
+    <div class="container">
+      <mat-form-field appearance="outline" class="w-100">
+        <mat-label>Enter your password</mat-label>
+        <input matInput formControlName="confirmPassword" [type]="isHiddenConPass ? 'password' : 'text'">
+        <button mat-icon-button matSuffix (click)="isHiddenConPass = !isHiddenConPass" [attr.aria-label]="'hide password'" [attr.aria-pressed]="isHiddenConPass">
+          <mat-icon>{{isHiddenConPass ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+  </div>
+<div class="name-container">
+  <!-- gender
+  
+  -->
+  <mat-form-field appearance="outline" class="w-100" style="margin-right: 20px;">
+    <mat-label>Select</mat-label>
+    <mat-select formControlName="gender">
+      <mat-option value="Male">Male</mat-option>
+      <mat-option value="Female">Female</mat-option>
+      <mat-option value="Other">Other</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <div >
+    <mat-form-field  appearance="outline" class="w-100">
+      <mat-label>Address</mat-label>
+      <input matInput formControlName="address" placeholder="221/B Baker Street,london" >
+    </mat-form-field>
+  </div>
+</div>
+<div style="display: flex;" >
+  
+  <mat-checkbox formControlName="agree" id="check"></mat-checkbox>
+  <div class="check-rules" style="margin-left: 10px;">
+    <label for="check">I want to receive exclusive offers and promotions
+      from E-medilife</label>
+  </div>
+</div>
+<div class="button-container">
+  <button mat-raised-button style="width: 10rem;"  >Register</button>
+</div>
+  </form>
+</div>

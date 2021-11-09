@@ -1,0 +1,29 @@
+@import "variables";
+
+
+.language-viewer {
+  margin-left: auto;
+
+  span, i {
+    display: inline-block;
+    color: #747474 !important;
+  }
+
+
+  button {
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: normal;
+    font-family: $font-en-primary;
+
+    mat-icon {
+      color: #FFFFFF;
+    }
+  }
+
+}
+
+::ng-deep.dropdown-view.mat-menu-panel {
+  width: 200px !important;
+}
+

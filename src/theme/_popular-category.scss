@@ -1,0 +1,224 @@
+@import "variables";
+
+
+.clearfix::after{
+  content: "";
+  display: block;
+  clear: both;
+}
+.section-wrapper {
+  display: block;
+  //grid-template-columns: 1.1fr 1fr 1fr 1fr;
+  //grid-template-rows: auto;
+  //grid-gap: 20px 20px;
+  margin-bottom: 5vh;
+  box-sizing: border-box;
+  min-height: 430px;
+
+  .d-block {
+    float: right;
+    width: calc(100% - 310px);
+  }
+
+}
+
+.section-wrapper .card {
+  padding: 20px 0;
+  box-sizing: border-box;
+}
+.electronic-device{
+  float: left;
+  width: 280px;
+  display: block;
+  height: 420px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
+  background-origin: border-box;
+  padding: 25px 30px;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 50;
+  border-radius: 7px;
+}
+
+.electronic-device::before {
+  float: left;
+  content: "";
+  background-color: var(--bg-rgba);
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -50;
+  border-radius: 7px;
+}
+
+.electronic-device::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border-left: 15px solid var(--bg-solid);
+  border-top: 15px solid transparent;
+  border-bottom: 20px solid transparent;
+  position: absolute;
+  top: 15%;
+  right: -15px;
+}
+
+.electronic-device-title {
+  display: block;
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+
+.electronic-device-title h2 {
+  color: #fff;
+  font-weight: 600;
+  font-family: $font-en-primary;
+  font-style: normal;
+  display: block;
+  font-size: 35px;
+  position: relative;
+  z-index: 55;
+  padding-bottom: 15px;
+  letter-spacing: 1px;
+  line-height: 40px;
+}
+
+.electronic-device-title h2::after {
+  content: "";
+  width: 100px;
+  height: 6px;
+  background-color: #f2ba22;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.electronic-device-description p {
+  color: #fff;
+  font-weight: 400;
+  font-family: $font-en-primary;
+  display: block;
+  font-size: 19px;
+  line-height: 30px;
+  font-style: normal;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+.electronic-device-btn {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-top: 20%;
+  position: absolute;
+  bottom: 40px;
+  left: 20px;
+}
+
+.electronic-device-btn a {
+  color: #000;
+  font-weight: 500;
+  font-family: $font-en-primary;
+  background-color: #f2ba22;
+  max-width: 155px;
+  text-align: center;
+  padding: 10px 16px;
+  font-size: 20px;
+  border-radius: 5px;
+  transition: all 0.3s linear;
+  position: relative;
+  z-index: 60;
+  border: 2px solid #f2ba22;
+}
+
+.electronic-device-btn a::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  z-index: -60;
+  visibility: hidden;
+  opacity: 0;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: all 0.3s linear;
+}
+
+.electronic-device-btn a:hover::after {
+  visibility: visible;
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+#height-change {
+  max-height: 180px;
+  height: 100%;
+}
+
+
+/**section5-area **/
+@media(max-width:1050px){
+  .section-wrapper{
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+  }
+}
+@media(max-width:850px){
+  .section-wrapper{
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+  }
+}
+@media(max-width:650px){
+  .section-wrapper{
+    grid-template-columns: repeat(1, 1fr);
+    min-height: 100%;
+  }
+  .section-wrapper .card .card-price{
+    visibility: visible!important;
+  }
+  .section-wrapper .card{
+    text-align: center;
+  }
+  .electronic-device{
+    width: 80%;
+    float: none!important;
+    margin: 30px auto;
+    height:350px!important;
+    display: none;
+  }
+  .section-wrapper .card .card-icon-menu{
+    position: static;
+    visibility: visible;
+    opacity: 1;
+  }
+
+.section-wrapper {
+
+  .d-block {
+    float: none!important;
+    width: 95%;
+    margin: auto;
+  }
+
+}
+}
+@media(max-width:400px){
+  .electronic-device{
+    width: 90%;
+    padding: 30px;
+  }
+}

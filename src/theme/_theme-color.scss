@@ -1,0 +1,9 @@
+
+@use '~@angular/material' as mat;
+@import "custom-palette";
+
+$p-primary: mat.define-palette($mat-soft-primary, 700, 50, 900);
+$p-accent: mat.define-palette($mat-soft-accent, 300, 100, 700);
+$p-warn: mat.define-palette($mat-soft-warn, 700, 50, 900);
+
+$primary-theme: mat.define-light-theme($p-primary, $p-accent, $p-warn);

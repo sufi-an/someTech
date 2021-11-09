@@ -1,0 +1,47 @@
+@import "variables";
+
+.gift-card-details{
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap:25px 20px;
+}
+.gift-card-img img{
+  height: 380px;
+  width: 100%;
+  object-fit: contain;
+  transition: all 0.3s linear;
+}
+.gift-card-img img:hover{
+  transform: translateY(-10px);
+}
+
+
+/*.gift-card*/
+@media(max-width:991px){
+  .gift-card-details{
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .gift-card-img img{
+    height: 400px;
+  }
+}
+@media(max-width:756px){
+  .gift-card-details{
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .gift-card-img img{
+    height: 400px;
+  }
+}
+@media(max-width:450px){
+  .gift-card-details{
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .gift-card-img img{
+    height: 400px;
+  }
+  .gift-card-img img:hover{
+    transform: translateY(0px);
+  }
+}
+
