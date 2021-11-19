@@ -1,0 +1,51 @@
+<div class="top-action">
+    <button mat-raised-button color="primary" [routerLink]="['add-new-brand']">
+      <mat-icon>add</mat-icon>
+      Add New Brand
+    </button>
+  </div>
+  
+  
+  <div class="header">
+    <h2>Brand List</h2>
+  </div>
+  
+  <hr class="center-square">
+  
+  
+  <div class="table-container">
+    <table>
+      <thead>
+      <tr class="table-head">
+        <th scope="col">{{'Image'}}</th>
+        <th scope="col">{{'Brand Name'}}</th>
+        <th scope="col">{{'Slug'}}</th>
+        <th scope="col">{{'Actions'}}</th>
+      </tr>
+      </thead> <!-- End Table Head -->
+      <tr *ngFor="let data of brands; let i = index">
+        <td [attr.data-label]="'Image'">
+          <img class="table-image" [src]="data?.image ? data.image : '/assets/images/placeholder/test.png'"
+               [alt]="data.brandName">
+        </td>
+        <td [attr.data-label]="'Brand Name'">{{data.brandName}}</td>
+        <td [attr.data-label]="'Slug'">{{data.brandSlug}}</td>
+        <td [attr.data-label]="'Actions'">
+          <button [disabled]="data.readOnly" style="margin-right: 5px;" mat-mini-fab color="warn" (click)="openConfirmDialog(data._id)">
+            <mat-icon>delete</mat-icon>
+          </button>
+          <button [disabled]="data.readOnly" [routerLink]="['edit-brand/', data._id]" mat-mini-fab
+                  aria-label="Example icon-button with a heart icon">
+            <mat-icon>edit</mat-icon>
+          </button>
+        </td>
+      </tr><!-- End Table Body -->
+  
+    </table>
+  
+  </div>
+  
+  <!-- LOADING TEMPLATE -->
+<!--   <ngx-spinner style="width: 100vw; height: 100vh" bdColor="rgba(0,0,0,0.25)" size="medium" color="#fff"
+               type="ball-clip-rotate" [fullScreen]="true"><p style="color: white"> Loading... </p></ngx-spinner>
+   -->

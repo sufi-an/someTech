@@ -5,13 +5,17 @@ import { MaterialModule } from '../material/material.module';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { PhoneVerificationDialogComponent } from './lazy-component/phone-verification-dialog/phone-verification-dialog.component';
+import { ConfirmDialogComponent } from './components/ui/confirm-dialog/confirm-dialog.component';
+import { ProductCardComponent } from './components/product-card/product-card.component';
 
 
 
 @NgModule({
   declarations: [
     SnackbarNotificationComponent,
-    PhoneVerificationDialogComponent
+    PhoneVerificationDialogComponent,
+    ConfirmDialogComponent,
+    ProductCardComponent
   ],
   imports: [
     CommonModule,

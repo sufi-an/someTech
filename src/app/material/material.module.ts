@@ -14,6 +14,9 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { MatSidenavModule} from '@angular/material/sidenav';
+import {MatCardModule} from '@angular/material/card';
 const materials = [
   MatDatepickerModule,
   MatFormFieldModule,
@@ -31,6 +34,9 @@ const materials = [
   MatCheckboxModule,
   FlexLayoutModule,
   MatMenuModule,
+  MatToolbarModule,
+  MatSidenavModule,
+  MatCardModule,
 ];
 
 

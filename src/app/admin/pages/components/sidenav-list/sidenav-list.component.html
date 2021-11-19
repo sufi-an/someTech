@@ -1,0 +1,214 @@
+<!--fxLayout="row" fxLayoutAlign="start center"-->
+<!--(click)="onClick(menu.id)"-->
+<div class="menu-item" *ngFor="let menu of parentMenu">
+    <a *ngIf="menu.routerLink && !menu.hasSubMenu"
+       mat-button
+       class="list-item"
+       (click)="onClick(menu.id)"
+       [routerLink]="[menu.routerLink]" routerLinkActive="list-item-active"
+       [routerLinkActiveOptions]="(menu.parentId != '0') ? { exact:false } : {exact:true}"
+       [id]="'menu-item-admin-'+menu.id">
+      <mat-icon class="menu-icon">{{menu.icon}}</mat-icon>
+      <span class="menu-title">{{menu.title}}</span>
+    </a>
+    <a *ngIf="menu.href && !menu.hasSubMenu"
+       mat-button
+       class="list-item"
+       (click)="onClick(menu.id)"
+       [attr.href]="menu.href || ''" [attr.target]="menu.target || ''"
+       [id]="'menu-item-admin-'+menu.id">
+      <mat-icon class="menu-icon">{{menu.icon}}</mat-icon>
+      <span class="menu-title">{{menu.title}}</span>
+    </a>
+    <a *ngIf="menu.hasSubMenu"
+       mat-button
+       class="list-item"
+       (click)="onClick(menu.id)"
+       [id]="'menu-item-admin-'+menu.id">
+      <mat-icon class="menu-icon">{{menu.icon}}</mat-icon>
+      <span class="menu-title">{{menu.title}}</span>
+      <mat-icon class="menu-expand-icon transition-2">arrow_drop_down</mat-icon>
+    </a>
+  
+    <div *ngIf="menu.hasSubMenu" class="sub-menu" [id]="'sub-menu-admin-'+menu.id">
+      <app-sidenav-list [menuItems]="menuItems" [menuParentId]="menu.id"></app-sidenav-list>
+    </div>
+  </div>
+  
+  
+  <!--<div class="container">-->
+  
+  <!--  <mat-nav-list class="list-item-sidenav">-->
+  <!--    <a (click)="sideLinkClick()" [routerLink]="['dashboard']" class="list-item"-->
+  <!--       routerLinkActive="list-item-active"-->
+  <!--       mat-list-item>-->
+  <!--      <mat-icon>home</mat-icon>-->
+  <!--      <span class="sidenav-link-title">{{'Dashboard'}}</span>-->
+  <!--    </a>-->
+  
+  
+  <!--    <a (click)="showSubmenu = !showSubmenu"-->
+  <!--       routerLinkActive="list-item-active"-->
+  <!--       mat-list-item>-->
+  <!--      <mat-icon>add_circle</mat-icon>-->
+  <!--      <span class="sidenav-link-title">{{'ln.addInputData'}}</span>-->
+  <!--      <mat-icon class="menu-button" [ngClass]="{'rotated' : showSubmenu}" *ngIf="isExpanded || isShowing">expand_more</mat-icon>-->
+  
+  <!--    </a>-->
+  
+  <!--    &lt;!&ndash;    <a (click)="showSubmenu = !showSubmenu" class="parent" mat-list-item>&ndash;&gt;-->
+  <!--    &lt;!&ndash;      <span class="full-width" *ngIf="isExpanded || isShowing">Parent Menu</span>&ndash;&gt;-->
+  <!--    &lt;!&ndash;      <mat-icon mat-list-icon>home</mat-icon>&ndash;&gt;-->
+  <!--    &lt;!&ndash;      <mat-icon class="menu-button" [ngClass]="{'rotated' : showSubmenu}" *ngIf="isExpanded || isShowing">expand_more</mat-icon>&ndash;&gt;-->
+  <!--    &lt;!&ndash;    </a>&ndash;&gt;-->
+  <!--    <div class="submenu" [ngClass]="{'expanded' : showSubmenu}" *ngIf="isShowing || isExpanded">-->
+  <!--      <a (click)="sideLinkClick()" routerLink="/shop/add-sale-data"-->
+  <!--         routerLinkActive="list-item-active"-->
+  <!--         mat-list-item>-->
+  <!--        <mat-icon>assignment_turned_in</mat-icon>-->
+  <!--        <span class="sidenav-link-title">{{'ln.sales'}}</span>-->
+  <!--      </a>-->
+  
+  <!--      <a (click)="sideLinkClick()" routerLink="/shop/add-purchase-data"-->
+  <!--         routerLinkActive="list-item-active"-->
+  <!--         mat-list-item>-->
+  <!--        <mat-icon>library_add</mat-icon>-->
+  <!--        <span class="sidenav-link-title">{{'ln.purchase'}}</span>-->
+  <!--      </a>-->
+  
+  
+  <!--      <a (click)="sideLinkClick()" routerLink="/shop/add-expense-data"-->
+  <!--         routerLinkActive="list-item-active"-->
+  <!--         mat-list-item>-->
+  <!--        <mat-icon>send</mat-icon>-->
+  <!--        <span class="sidenav-link-title">{{'ln.expense'}}</span>-->
+  <!--      </a>-->
+  
+  <!--      <a (click)="sideLinkClick()" routerLink="/shop/add-reserve-and-investment"-->
+  <!--         routerLinkActive="list-item-active"-->
+  <!--         mat-list-item>-->
+  <!--        <mat-icon>backup</mat-icon>-->
+  <!--        <span class="sidenav-link-title">{{'ln.reserveAndInvestment'}}</span>-->
+  <!--      </a>-->
+  <!--    </div>-->
+  
+  
+  <!--    <a (click)="sideLinkClick()" class="list-item"-->
+  <!--       [routerLink]="['courses']"-->
+  <!--       routerLinkActive="list-item-active"-->
+  <!--       mat-list-item>-->
+  <!--      <mat-icon>assignment_turned_in</mat-icon>-->
+  <!--      <span class="sidenav-link-title">{{'Courses'}}</span>-->
+  <!--    </a>-->
+  
+  <!--    <a (click)="sideLinkClick()" class="list-item"-->
+  <!--       [routerLink]="['services']"-->
+  <!--       routerLinkActive="list-item-active"-->
+  <!--       mat-list-item>-->
+  <!--      <mat-icon>dns</mat-icon>-->
+  <!--      <span class="sidenav-link-title">{{'Services'}}</span>-->
+  <!--    </a>-->
+  
+  
+  <!--    <a (click)="sideLinkClick()" class="list-item"-->
+  <!--       [routerLink]="['intern-applications']"-->
+  <!--       routerLinkActive="list-item-active"-->
+  <!--       mat-list-item>-->
+  <!--      <mat-icon>backup</mat-icon>-->
+  <!--      <span class="sidenav-link-title">{{'Intern Applications'}}</span>-->
+  <!--    </a>-->
+  
+  <!--    <a (click)="sideLinkClick()" class="list-item"-->
+  <!--       [routerLink]="['course-applications']"-->
+  <!--       routerLinkActive="list-item-active"-->
+  <!--       mat-list-item>-->
+  <!--      <mat-icon>backup</mat-icon>-->
+  <!--      <span class="sidenav-link-title">{{'Course Applications'}}</span>-->
+  <!--    </a>-->
+  
+  <!--    <a (click)="sideLinkClick()" class="list-item"-->
+  <!--       [routerLink]="['contact-us-data']"-->
+  <!--       routerLinkActive="list-item-active"-->
+  <!--       mat-list-item>-->
+  <!--      <mat-icon>backup</mat-icon>-->
+  <!--      <span class="sidenav-link-title">{{'Contact Us Data'}}</span>-->
+  <!--    </a>-->
+  
+  <!--    <a (click)="sideLinkClick()" class="list-item"-->
+  <!--       [routerLink]="['admins-control']"-->
+  <!--       routerLinkActive="list-item-active"-->
+  <!--       mat-list-item>-->
+  <!--      <mat-icon>library_add</mat-icon>-->
+  <!--      <span class="sidenav-link-title">{{'Admin Control'}}</span>-->
+  <!--    </a>-->
+  
+  <!--    <a (click)="sideLinkClick()" [routerLink]="[baseLink, 'users']" class="list-item"-->
+  <!--       routerLinkActive="list-item-active"-->
+  <!--       mat-list-item>-->
+  <!--      <mat-icon>send</mat-icon>-->
+  <!--      <span class="sidenav-link-title">User List</span>-->
+  <!--    </a>-->
+  
+  <!--&lt;!&ndash;    <a (click)="sideLinkClick()" [routerLink]="[baseLink, 'basic-inputs']" class="list-item"&ndash;&gt;-->
+  <!--&lt;!&ndash;       routerLinkActive="list-item-active"&ndash;&gt;-->
+  <!--&lt;!&ndash;       mat-list-item>&ndash;&gt;-->
+  <!--&lt;!&ndash;      <mat-icon>dns</mat-icon>&ndash;&gt;-->
+  <!--&lt;!&ndash;      <span class="sidenav-link-title">Basic Input Fields</span>&ndash;&gt;-->
+  <!--&lt;!&ndash;    </a>&ndash;&gt;-->
+  
+  
+  <!--&lt;!&ndash;    <a (click)="sideLinkClick()" routerLink="/shop/purchase-report-overview" class="list-item"&ndash;&gt;-->
+  <!--&lt;!&ndash;       routerLinkActive="list-item-active"&ndash;&gt;-->
+  <!--&lt;!&ndash;       mat-list-item>&ndash;&gt;-->
+  <!--&lt;!&ndash;      <mat-icon>speed</mat-icon>&ndash;&gt;-->
+  <!--&lt;!&ndash;      <span class="sidenav-link-title">Purchase Report</span>&ndash;&gt;-->
+  <!--&lt;!&ndash;    </a>&ndash;&gt;-->
+  
+  <!--    <a (click)="sideLinkClick()" routerLink="/shop/expense-report" class="list-item"-->
+  <!--       routerLinkActive="list-item-active"-->
+  <!--       mat-list-item>-->
+  <!--      <mat-icon>shop</mat-icon>-->
+  <!--      <span class="sidenav-link-title">PDF Crater</span>-->
+  <!--    </a>-->
+  
+  
+  <!--    <a (click)="sideLinkClick()" routerLink="/shop/add-service-payment" class="list-item"-->
+  <!--       routerLinkActive="list-item-active"-->
+  <!--       mat-list-item>-->
+  <!--      <mat-icon>payments</mat-icon>-->
+  <!--      <span class="sidenav-link-title">Student Applications</span>-->
+  <!--    </a>-->
+  
+  <!--    <a (click)="sideLinkClick()" routerLink="/shop/customer-report-overview" class="list-item"-->
+  <!--       routerLinkActive="list-item-active"-->
+  <!--       mat-list-item>-->
+  <!--      <mat-icon>equalizer</mat-icon>-->
+  <!--      <span class="sidenav-link-title">Analysis</span>-->
+  <!--    </a>-->
+  
+  <!--    <a (click)="sideLinkClick()" routerLink="/shop/test" class="list-item"-->
+  <!--       routerLinkActive="list-item-active"-->
+  <!--       mat-list-item>-->
+  <!--      <mat-icon>settings</mat-icon>-->
+  <!--      <span class="sidenav-link-title">Settings</span>-->
+  <!--    </a>-->
+  
+  
+  <!--  </mat-nav-list>-->
+  
+  <!--&lt;!&ndash;  <div class="footer">&ndash;&gt;-->
+  <!--&lt;!&ndash;    <div class="button-group">&ndash;&gt;-->
+  <!--&lt;!&ndash;      <div [class.active]="activeLang === 'en'" class="btn" (click)="selectLang('en')"><img&ndash;&gt;-->
+  <!--&lt;!&ndash;        src="/assets/img/united-states-flag.png" alt="">EN&ndash;&gt;-->
+  <!--&lt;!&ndash;      </div>&ndash;&gt;-->
+  <!--&lt;!&ndash;      <div [class.active]="activeLang === 'bn'" class="btn bn-default" (click)="selectLang('bn')"><img&ndash;&gt;-->
+  <!--&lt;!&ndash;        src="/assets/img/bangladesh-flag.png" alt="">বাং&ndash;&gt;-->
+  <!--&lt;!&ndash;      </div>&ndash;&gt;-->
+  <!--&lt;!&ndash;    </div>&ndash;&gt;-->
+  <!--&lt;!&ndash;    <div class="company-link">&ndash;&gt;-->
+  <!--&lt;!&ndash;      <a  href="https://softlabit.com/" target="_blank">Copyright &copy; Softlabit.com - 2021</a>&ndash;&gt;-->
+  <!--&lt;!&ndash;    </div>&ndash;&gt;-->
+  
+  <!--&lt;!&ndash;  </div>&ndash;&gt;-->
+  <!--</div>-->
+  

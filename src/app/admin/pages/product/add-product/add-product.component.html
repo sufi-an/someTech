@@ -1,0 +1,92 @@
+<div style="position: relative">
+    <!--  <mat-spinner *ngIf="isLoading"
+                  style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; margin: auto"
+     ></mat-spinner> -->
+   
+     <div class="header-dialog">
+       <h1 mat-dialog-title>product</h1>
+       <mat-checkbox [(ngModel)]="autoSlug" (change)="autoGenerateSlug()" color="primary">Auto Slug</mat-checkbox>
+     </div>
+   
+     <form [formGroup]="dataForm" (ngSubmit)="onSubmit()"
+           #templateForm="ngForm"
+           fxLayout="column"
+           fxLayoutAlign="space-around center">
+   
+       <div (click)="onHoldInputData()" class="imag-view"
+            [routerLink]="[id ? '../../../' : '../../', 'image-gallery']"
+            [state]="{url: router.url}">
+         <img [src]="pickedImage" alt="">
+       </div>
+   
+       <mat-form-field appearance="outline">
+         <mat-label>Product Name</mat-label>
+         <input formControlName="productName" matInput placeholder="Enter product name" required>
+         <mat-error>This field is required</mat-error>
+       </mat-form-field>
+   
+       <mat-form-field appearance="outline">
+        <mat-label>Brand Slug</mat-label>
+        <input [readonly]="autoSlug" formControlName="productSlug" matInput placeholder="Enter brand slug" required>
+        <mat-error>This field is required</mat-error>
+      </mat-form-field>
+      <!--  -->
+       <mat-form-field appearance="outline">
+        <mat-label>Product Price</mat-label>
+        <input  formControlName="price" matInput placeholder="Enter price " required>
+        <mat-error>This field is required</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="w-100" style="margin-right: 20px;">
+        <mat-label>Discount Type</mat-label>
+        <mat-select formControlName="discountType">
+          <mat-option value="None">None</mat-option>
+          <mat-option value="Percentage">Percentage</mat-option>
+          <mat-option value="Cash">Cash</mat-option>
+        </mat-select>
+      </mat-form-field>
+      
+      <mat-form-field appearance="outline">
+        <mat-label>Quantity</mat-label>
+        <input  formControlName="discountAmount" matInput placeholder="Enter discountAmount " >
+        
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Category</mat-label>
+        <input  formControlName="category" matInput placeholder="Enter category " >
+        
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>subCategory </mat-label>
+        <input  formControlName="subCategory" matInput placeholder="Enter subCategory " >
+        
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Tags</mat-label>
+        <input  formControlName="tags" matInput placeholder="Enter tags " >
+        
+      </mat-form-field>
+      
+      <mat-form-field appearance="outline">
+        <mat-label>Warrenty  Service Work needed</mat-label>
+        <input  formControlName="warrantyServices" matInput placeholder="Enter warrantyServices " >
+        
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>return policy</mat-label>
+        <input  formControlName="returnPolicy" matInput placeholder="Enter returnPolicy " >
+        
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Short description</mat-label>
+        <input  formControlName="shortDescription" matInput placeholder="Enter shortDescription " >
+        
+      </mat-form-field>
+       <button mat-raised-button color="primary" type="submit">{{ product ? 'Edit product' : 'Add Product' }}</button>
+     </form>
+   </div>
+   
+   <!-- LOADING TEMPLATE -->
+ <!--   <ngx-spinner style="width: 100vw; height: 100vh" bdColor="rgba(0,0,0,0.25)" size="medium" color="#fff"
+                type="ball-clip-rotate" [fullScreen]="true"><p style="color: white"> Loading... </p></ngx-spinner> -->
+   

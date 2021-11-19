@@ -15,7 +15,7 @@ export class UiService {
     public dialog: MatDialog,
     //private bottomSheet: MatBottomSheet,
     //private router: Router,
-    ) { }
+    ) {  }
 
   warn(msg) {
     this.snackBar.openFromComponent(SnackbarNotificationComponent, {

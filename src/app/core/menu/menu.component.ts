@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavItems } from 'src/app/interfaces/nav-items';
 
 import { navitems } from '../utils/nav-items';
 
@@ -8,6 +9,7 @@ import { navitems } from '../utils/nav-items';
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent implements OnInit {
+  navItems: NavItems[];
   
   
   
@@ -15,6 +17,7 @@ export class MenuComponent implements OnInit {
     
   ) { }
   ngOnInit(): void {
+    this.navItems=navitems
     console.log(navitems)
     //navitem contains all menu data
   }

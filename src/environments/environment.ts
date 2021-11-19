@@ -10,7 +10,9 @@ export const environment = {
   userBaseUrl: '/account',
   userLoginUrl: '/login',
   storageSecret:'SOFT_2021_IT_1998',
-
+  //admin
+  adminLoginUrl:'admin/login',
+  adminBaseUrl:'admin',
   VERSION: 1
 };
 

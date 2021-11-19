@@ -1,0 +1,46 @@
+import {ProductAttribute} from './product-attribute';
+import {ProductCategory} from './product-category';
+import {ProductSubCategory} from './product-sub-category';
+import {ProductBrand} from './product-brand';
+import {ProductVariation} from './product-variation';
+import {Vendor} from './vendor';
+import {ProductParentCategory} from './product-parent-category';
+
+export interface Product {
+  _id: string;
+  productName: string;
+  productSlug: string;
+  sku?: string;
+  images?: string[];
+  price: number;
+  discountType: number;
+  discountAmount: number;
+  quantity: number;
+  soldQuantity: number;
+  attributes: string[] | ProductAttribute[];
+  filterData: any[];
+  hasAttribute: boolean;
+  hasVariation: boolean;
+  variation: string[] | ProductVariation[];
+  vendor?: string | Vendor;
+  parentCategory: string | ProductParentCategory;
+  parentCategorySlug: string;
+  category: string | ProductCategory;
+  categorySlug: string;
+  subCategory: string | ProductSubCategory;
+  subCategorySlug: string;
+  brand: string | ProductBrand;
+  brandSlug: string;
+  tags?: any[];
+  ratingReview: any[];
+  returnPolicy?: string;
+  warrantyServices?: string;
+  shortDescription?: string;
+  description?: string;
+  createdAt?: Date;
+  updatedAt?: Date;
+  stockVisibility?: boolean;
+  productVisibility?: boolean;
+  select?: boolean;
+  rating?: number;
+}

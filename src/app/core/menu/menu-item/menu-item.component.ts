@@ -8,7 +8,7 @@ import {NavItems} from '../../../interfaces/nav-items';
   styleUrls: ['./menu-item.component.scss']
 })
 export class MenuItemComponent implements OnInit {
-  @Input() items: NavItems[];
+  @Input() items: NavItems[]|null;
   @ViewChild('childMenu', {static: true}) public childMenu;
 
   constructor(public router: Router) {

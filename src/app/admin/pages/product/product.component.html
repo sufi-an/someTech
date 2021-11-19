@@ -1,0 +1,126 @@
+<div class="top-action">
+    <button mat-raised-button color="primary" [routerLink]="['add-new-product']">
+      <mat-icon>add</mat-icon>
+      Add New Product
+    </button>
+  </div>
+  
+<div class="container-fluid">
+
+    <div class="filter-area">
+      <div class="select-views">
+        <mat-form-field appearance="outline" class="mat-filter-select">
+          <mat-label>Select Brand</mat-label>
+          <mat-select #matCatSelect>
+            <mat-option *ngFor="let data of categories" [value]="data" (onSelectionChange)="onSelectCategory($event)">
+              <span>{{data.categoryName}}</span>
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline" class="mat-filter-select">
+          <mat-label>Product Type</mat-label>
+          <mat-select #matSubCatSelect>
+            <mat-option *ngFor="let data of subCategories" [value]="data"
+                        (onSelectionChange)="onSelectSubCategory($event)">
+              <span>{{data.subCategoryName}}</span>
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+  
+        <div class="clear" *ngIf="query">
+          <button mat-raised-button color="warn" (click)="onClearFilter()">
+            <mat-icon>clear</mat-icon>
+            Clear Filter
+          </button>
+        </div>
+      </div>
+  
+      <div class="search search-area">
+        <form class="search-form" #searchForm=ngForm>
+          <input #searchInput
+                 style="background: aliceblue;"
+                 type="text"
+                 placeholder="Search here..."
+                 name="searchTerm"
+                 autocomplete="off"
+                 ngModel
+                 required>
+          <div class="icon">
+            <mat-icon>search</mat-icon>
+          </div>
+        </form>
+      </div>
+  
+    </div>
+  
+  
+    <hr class="center-square">
+  
+  
+    <div class="table-container">
+      <table>
+        <thead>
+        <tr class="table-head">
+          <th scope="col">{{'Name'}}</th>
+          <th scope="col">{{'Image'}}</th>
+          <th scope="col">{{'SKU'}}</th>
+          <th scope="col">{{'Category'}}</th>
+          <th scope="col">{{'Retail Price'}}</th>
+          <th scope="col">{{'Sale Price'}}</th>
+          <th scope="col">{{'Available'}}</th>
+          <th scope="col">{{'Action'}}</th>
+        </tr>
+        </thead> <!-- End Table Head -->
+        <tr
+          *ngFor="let data of products | paginate: { itemsPerPage: productsPerPage, currentPage: currentPage, totalItems: totalProducts }; let i = index">
+          <td [attr.data-label]="'Name'">{{data.productName}}</td>
+          <td [attr.data-label]="'Image'">
+            <img [src]="data?.images && data?.images.length > 0 ? data.images[0] : '/assets/images/placeholder/test.png'"
+                 [alt]="data.productName">
+          </td>
+          <td [attr.data-label]="'SKU'">{{data.sku}}</td>
+         <!--  <td [attr.data-label]="'Category'">{{data.category?.categoryName}}</td> -->
+          <td [attr.data-label]="'Retail Price'">৳ {{data.price}}</td>
+          <!-- <td [attr.data-label]="'Sale Price'">৳ {{data | price: 'priceWithDiscount'}}</td> -->
+          <td [attr.data-label]="'Available'">{{data.quantity}}</td>
+          <td [attr.data-label]="'Details'">
+            <a mat-mini-fab color="primary" [href]="'/product-details/' + data.productSlug" target="_blank" mat-icon-button>
+              <mat-icon style="color: #FFFFFF">visibility</mat-icon>
+            </a>
+            <button [routerLink]="['../../', 'add-product', 'edit', data._id]" mat-mini-fab color="accent" style="margin-left: 4px;">
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-mini-fab color="warn" style="margin-left: 4px;" (click)="openConfirmDialog(data._id)">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </td>
+        </tr><!-- End Table Body -->
+  
+      </table>
+  
+    </div>
+  
+    <div class="pagination-container">
+      <pagination-controls
+        class="product-pagination"
+        [autoHide]="true"
+        [maxSize]="15"
+        (pageChange)="onPageChanged($event)">
+      </pagination-controls>
+    </div>     <!-- END PAGINATION -->
+  
+  </div>
+  
+  
+  <!-- LOADING TEMPLATE -->
+  <!-- <ngx-spinner style="width: 100vw; height: 100vh" bdColor="rgba(0,0,0,0.25)" size="medium" color="#fff"
+               type="ball-clip-rotate" [fullScreen]="true"><p style="color: white"> Loading... </p></ngx-spinner> -->
+  
+  <!-- NO DATA TEMPLATE -->
+  <ng-template #noData>
+    <div style="margin-top: 50px; text-align: center">
+      <h2>No Product Found</h2>
+    </div>
+  </ng-template>
+  

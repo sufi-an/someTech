@@ -1,0 +1,47 @@
+<div style="position: relative">
+   <!--  <mat-spinner *ngIf="isLoading"
+                 style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; margin: auto"
+    ></mat-spinner> -->
+  
+    <div class="header-dialog">
+      <h1 mat-dialog-title>Brand</h1>
+      <mat-checkbox [(ngModel)]="autoSlug" (change)="autoGenerateSlug()" color="primary">Auto Slug</mat-checkbox>
+    </div>
+  
+    <form [formGroup]="dataForm" (ngSubmit)="onSubmit()"
+          #templateForm="ngForm"
+          fxLayout="column"
+          fxLayoutAlign="space-around center">
+  
+      <div (click)="onHoldInputData()" class="imag-view"
+           [routerLink]="[id ? '../../../' : '../../', 'image-gallery']"
+           [state]="{url: router.url}">
+        <img [src]="pickedImage" alt="">
+      </div>
+  
+      <mat-form-field appearance="outline">
+        <mat-label>Brand Name</mat-label>
+        <input formControlName="brandName" matInput placeholder="Enter brand name" required>
+        <mat-error>This field is required</mat-error>
+      </mat-form-field>
+  
+      <mat-form-field appearance="outline">
+        <mat-label>Brand Slug</mat-label>
+        <input [readonly]="autoSlug" formControlName="brandSlug" matInput placeholder="Enter brand slug" required>
+        <mat-error>This field is required</mat-error>
+      </mat-form-field>
+  
+        <mat-form-field appearance="outline">
+          <mat-label>Priority</mat-label>
+          <input matInput placeholder="brand priority" type="number" formControlName="priority" digitOnly>
+          <mat-error></mat-error>
+        </mat-form-field>
+  
+      <button mat-raised-button color="primary" type="submit">{{ brand ? 'Edit Brand' : 'Add Brand' }}</button>
+    </form>
+  </div>
+  
+  <!-- LOADING TEMPLATE -->
+<!--   <ngx-spinner style="width: 100vw; height: 100vh" bdColor="rgba(0,0,0,0.25)" size="medium" color="#fff"
+               type="ball-clip-rotate" [fullScreen]="true"><p style="color: white"> Loading... </p></ngx-spinner> -->
+  
